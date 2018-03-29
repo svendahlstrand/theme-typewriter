@@ -24,6 +24,7 @@ img {
     margin: 40px auto;
     display: block;
     max-width: 100%;
+    height: auto;
 }
 
 blockquote {
@@ -70,6 +71,7 @@ strong {
 
 .header {
     overflow: hidden;
+    padding-bottom: 15px;
 }
 
 .navigation {
@@ -119,14 +121,14 @@ strong {
 
 /* =Titles */
 .page-title {
-    margin-top:100px;
-    margin-bottom:125px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
 .page-title__text {
     font-weight: 700;
-    font-size: 70px;
+    font-size: 30px;
 }
 
 .page-title__subtitle {
@@ -136,11 +138,12 @@ strong {
 }
 
 .post-title {
-    margin-bottom: 110px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .post-title__text {
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .post-title__subtitle {
@@ -157,6 +160,8 @@ strong {
 .post-teaser {
     margin-bottom: 45px;
     font-weight: 700;
+    padding-top: 10px;
+    padding-bottom: 20px;
 }
 
 .post-teaser__title {
