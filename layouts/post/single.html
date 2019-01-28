@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="h-entry">
+{{ partial "post/title.html" . }}
+
+<div class="content e-content">
+	{{ .Content }}
+</div>
+
+{{ partial "post/about.html" . }}
+
+{{ partial "externals/disqus.html" . }}
+</div>
+{{ end }}

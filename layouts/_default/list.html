@@ -1,0 +1,26 @@
+{{ define "main" }}
+{{ partial "page/title.html" . }}
+
+<ul class="list-posts h-feed">
+	{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" | default 10) }}
+	{{ range $paginator.Pages  }}
+        <li class="post-teaser h-entry">
+			{{ if .Title }}
+			<h1 class="page-title post-title">
+				<a href="{{ .Permalink }}"><div class="page-title__text post-title__text">{{ .Title }}</div></a>
+			</h1>
+			{{ end }}
+			<span class="post-teaser__title e-content">{{ .Content }}</span>
+            <a href="{{ .Permalink }}" class="u-url">
+                <span class="post-teaser__date"><time class="dt-published" datetime="{{ .Date }}">{{ .Date.Format "2 January 2006" }}</time></span>
+            </a>
+        </li>
+    {{ end }}
+</ul>
+
+<footer>
+	<p class="text">{{ .Site.Params.description | safeHTML }}</p>
+</footer>
+
+{{ partial "page/explore.html" . }}
+{{ end }}

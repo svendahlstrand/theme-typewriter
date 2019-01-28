@@ -1,0 +1,31 @@
+<header class="header">
+    <div class="navigation">
+        <a href="/" class="logo">{{ .Site.Title }}</a>
+
+        <ul class="menu">
+            <li class="menu__entry"><a href="/">Home</a></li>
+            
+			{{ range .Site.Menus.main }}
+				{{ if .Page.Params.redirect_url }}
+					<li class="menu__entry"><a href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a></li>
+				{{ else }}
+					<li class="menu__entry"><a href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a></li>
+				{{ end }}
+			{{ end }}            
+        </ul>
+    </div>
+
+    <ul class="social-links">
+        {{ if .Site.Params.github }}
+            <a href="https://github.com/{{ .Site.Params.github }}" class="social-links__entry" target="_blank">
+                <i class="fa fa-github"></i>
+            </a>
+        {{ end }}
+
+        {{ if .Site.Params.twitter }}
+            <a href="https://twitter.com/{{ .Site.Params.twitter }}" class="social-links__entry" target="_blank">
+                <i class="fa fa-twitter"></i>
+            </a>
+        {{ end }}
+    </ul>
+</header>
