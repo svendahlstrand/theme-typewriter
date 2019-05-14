@@ -1,8 +1,7 @@
 {{ define "main" }}
-{{ partial "page/title.html" . }}
 
 <ul class="list-posts h-feed">
-	{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" | default 10) }}
+	{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" | default 25) }}
 	{{ range $paginator.Pages  }}
         <li class="post-teaser h-entry">
 			{{ if .Title }}
