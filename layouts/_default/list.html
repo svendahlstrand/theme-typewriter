@@ -6,10 +6,10 @@
         <li class="post-teaser h-entry">
 			{{ if .Title }}
 			<h1 class="page-title post-title">
-				<a href="{{ .Permalink }}"><div class="page-title__text post-title__text">{{ .Title }}</div></a>
+				<a href="{{ .Permalink }}"><span class="page-title__text post-title__text p-name">{{ .Title }}</span></a>
 			</h1>
 			{{ end }}
-			<span class="post-teaser__title e-content">{{ .Content }}</span>
+			<div class="post-teaser__title e-content">{{ .Content }}</div>
             <a href="{{ .Permalink }}" class="u-url">
                 <span class="post-teaser__date"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "2 January 2006" }}</time></span>
             </a>
